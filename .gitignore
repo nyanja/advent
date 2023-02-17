@@ -1,2 +1,5 @@
-*input
 *.nrepl-port
+**/target
+*.vscode
+*Cargo*
+*input
