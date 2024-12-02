@@ -1,0 +1,26 @@
+pub fn solve_1(input: &str) -> i32 {
+  0
+}
+
+pub fn solve_2(input: &str) -> i32 {
+  0
+}
+
+#[cfg(test)]
+mod tests {
+  use aoc_2024::read_example;
+
+use super::*;
+
+  #[test]
+  fn test_solve_1() {
+    let input = read_example();
+    assert_eq!(solve_1(&input), 0);
+  }
+
+  #[test]
+  fn test_solve_2() {
+    let input = read_example();
+    assert_eq!(solve_2(&input), 0);
+  }
+}

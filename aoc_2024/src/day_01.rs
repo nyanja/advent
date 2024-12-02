@@ -19,10 +19,8 @@
 // 66898   13714
 // 53434   62485 ...
 
-use aoc_2024::read_input;
 
-fn parse_input() -> (Vec<i32>, Vec<i32>) {
-  let input = read_input(1);
+fn parse_input(input: String) -> (Vec<i32>, Vec<i32>) {
   let mut left_list = Vec::new();
   let mut right_list = Vec::new();
   
@@ -38,8 +36,8 @@ fn parse_input() -> (Vec<i32>, Vec<i32>) {
 }
 
 
-pub fn solve_1() {
-  let (mut left_list, mut right_list) = parse_input();
+pub fn solve_1(input: String) -> i32 {
+  let (mut left_list, mut right_list) = parse_input(input);
   
   left_list.sort();
   right_list.sort();
@@ -49,7 +47,7 @@ pub fn solve_1() {
     .map(|(left, right)| (left - right).abs())
     .sum();
   
-  println!("Total distance: {}", total_distance);
+  total_distance
 }
 
 
@@ -77,13 +75,15 @@ pub fn solve_1() {
 // 
 // Once again consider your left and right lists. What is their similarity score?
 
-pub fn solve_2() {
-  let (left_list, right_list) = parse_input();
+pub fn solve_2(input: String) -> i32 {
+  let (left_list, right_list) = parse_input(input);
   let similarity_score: i32 = left_list.iter()
     .map(|&num| {
       let count = right_list.iter().filter(|&&right| right == num).count() as i32;
       count * num
     })
     .sum();
-  println!("Similarity score: {}", similarity_score);
+  similarity_score
 }
+
+
