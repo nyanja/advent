@@ -6,7 +6,7 @@ pub fn create_day_files(current_day: i32) -> Result<()> {
   let example_path = format!("example/day_{}.txt", day_str);
   let input_path = format!("input/day_{}.txt", day_str);
   let src_path = format!("src/day_{}.rs", day_str);
-  let draft_path = "src/draft.rs";
+  let draft_path = "draft.txt";
 
   // Create example and input files
   fs::File::create(&example_path)?;
