@@ -7,7 +7,8 @@ use std::time::Instant;
 // mod day_03;
 // mod day_04;
 // mod day_05;
-mod day_06;
+// mod day_06;
+mod day_07;
 mod scaffold;
 
 fn main() {
@@ -22,12 +23,12 @@ fn main() {
 
   let day = aoc_2024::get_current_day(None);
   let start = Instant::now();
-  let result_1 = day_06::solve_1(&read_input(day));
+  let result_1 = day_07::solve_1(&read_input(day));
   let duration_1 = start.elapsed();
   println!("Result of solve_1: {:?} (took {:?})", result_1, duration_1);
 
   let start = Instant::now();
-  let result_2 = day_06::solve_2(&read_input(day));
+  let result_2 = day_07::solve_2(&read_input(day));
   let duration_2 = start.elapsed();
   println!("Result of solve_2: {:?} (took {:?})", result_2, duration_2);
 }
