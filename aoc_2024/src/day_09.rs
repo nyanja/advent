@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 
 fn checksum(res: &Vec<i64>) -> i64 {
   res.iter().enumerate().map(|(i, &val)| val * i as i64).sum()
@@ -30,24 +32,46 @@ pub fn solve_1(input: &str) -> i64 {
 }
 
 pub fn solve_2(input: &str) -> i64 {
+  let mut vs: Vec<Vec<i64>> = Vec::new();
+  let mut ds: Vec<i64> = Vec::new();
+  let mut res: Vec<i64> = Vec::new();
+  let mut i = 0;
+  for chunk in input.lines().next().unwrap().chars().collect::<Vec<_>>().chunks(2) {
+    vs.push(vec![i, chunk[1].to_digit(10).unwrap() as i64]);
+    if chunk.len() == 2 {
+      ds.push(chunk[1].to_digit(10).unwrap() as i64);
+    }
+    i += 1;
+  }
+  while vs.len() > 0 {
+  }
   0
 }
 
 #[cfg(test)]
 mod tests {
-
-use super::*;
-
+  
+  use super::*;
+  
   #[test]
   fn test_solve_1() {
     let var_name = aoc_2024::read_example!(9);
     let input = var_name;
     assert_eq!(solve_1(&input), 1928);
   }
-
+  
   #[test]
   fn test_solve_2() {
     let input = aoc_2024::read_example!(9);
     assert_eq!(solve_2(&input), 0);
   }
 }
+
+
+
+
+
+
+
+
+
